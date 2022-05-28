@@ -3,25 +3,39 @@ h1 {
     text-align: center;
 }
 
+.heading {
+    background-color: rgb(115, 115, 234);
+}
+
 h2 {
     color: blue;
 }
 
-.background {
-   /* padding*/
+html {
+    font-family: 'Open Sans', sans-serif;
+    background-color: aquamarine;
 }
 
 footer {
     text-align: center;
     padding: 1px;
-    background-color: aquamarine;
+    background-color: rgb(115, 115, 234);
     color: black;
 }
 
 footer > h2 {
-    color: blue;
+    color: greenyellow;
 }
 
 li {
     display: inline;
+}
+
+.emphasis {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+body {
+    text-align: center;
 }

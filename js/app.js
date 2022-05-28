@@ -35,7 +35,7 @@ function startRecording() {
 	*/
 
 	navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
-		__log("getUserMedia() success, stream created, initializing WebAudioRecorder...");
+		/*__log("getUserMedia() success, stream created, initializing WebAudioRecorder...");*/
 
 		/*
 			create an audio context after getUserMedia is called
@@ -69,16 +69,16 @@ function startRecording() {
 		  numChannels:2, //2 is the default, mp3 encoding supports only 2
 		  onEncoderLoading: function(recorder, encoding) {
 		    // show "loading encoder..." display
-		    __log("Loading "+encoding+" encoder...");
+		    // __log("Loading "+encoding+" encoder...");
 		  },
 		  onEncoderLoaded: function(recorder, encoding) {
 		    // hide "loading encoder..." display
-		    __log(encoding+" encoder loaded");
+		    // __log(encoding+" encoder loaded");
 		  }
 		});
 
 		recorder.onComplete = function(recorder, blob) { 
-			__log("Encoding complete");
+			// __log("Encoding complete");
 			createDownloadLink(blob,recorder.encoding);
 			encodingTypeSelect.disabled = false;
 		}
@@ -93,7 +93,7 @@ function startRecording() {
 		//start the recording process
 		recorder.startRecording();
 
-		 __log("Recording started");
+		//  __log("Recording started");
 
 	}).catch(function(err) {
 	  	//enable the record button if getUSerMedia() fails
@@ -120,7 +120,7 @@ function stopRecording() {
 	//tell the recorder to finish the recording (stop recording + encode the recorded audio)
 	recorder.finishRecording();
 
-	__log('Recording stopped');
+	// __log('Recording stopped');
 }
 
 function createDownloadLink(blob,encoding) {
@@ -136,7 +136,7 @@ function createDownloadLink(blob,encoding) {
 
 	//link the a element to the blob
 	link.href = url;
-	link.download = 'test.'+encoding;
+	link.download = 'recordedAudio.'+encoding;
 	link.innerHTML = link.download;
 
 	//add the new audio and a elements to the li element
@@ -152,4 +152,49 @@ function createDownloadLink(blob,encoding) {
 //helper function
 function __log(e, data) {
 	log.innerHTML += "\n" + e + " " + (data || '');
+}
+
+
+
+
+// UPLOADING AUDIO
+
+const getValuesFromInputs = () =>{
+	const audioFile = document.querySelector('input.audio').files[0];
+	document.querySelector('form').style.display = 'none';
+ 
+	return [audioFile];
+ 
+ }
+
+ const convertInputValues = () => {
+	const [audioFile] = getValuesFromInputs();
+  
+	const audioFileURL = URL.createObjectURL(audioFile);
+  
+	return[audioFileURL]
+  }
+
+  function createUploadLink(blob,encoding) {
+	
+	const url = convertInputValues();
+	var au = document.createElement('audio');
+	var li = document.createElement('li');
+	var link = document.createElement('a');
+
+	//add controls to the <audio> element
+	au.controls = true;
+	au.src = url;
+
+	//link the a element to the blob
+	link.href = url;
+	link.download = 'uploadedAudio.'+encoding;
+	link.innerHTML = link.download;
+
+	//add the new audio and a elements to the li element
+	li.appendChild(au);
+	li.appendChild(link);
+
+	//add the li element to the ordered list
+	recordingsList.appendChild(li);
 }
