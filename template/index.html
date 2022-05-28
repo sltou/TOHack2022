@@ -10,28 +10,37 @@
 </head>
 <body>
     <h1>Audio recording and Conversion</h1>
-	<div style="max-width: 28em;" class="">
-		<p>Convert recorded audio to:</p>
+	<div style="max-width: 90em;"> <!--originally 28em max-width-->
+		<p class="emphasis">Convert recorded audio to:</p>
 		<select id="encodingTypeSelect">
-		  <option value="wav">Waveform Audio (.wav)</option>
+		  <!-- <option value="wav">Waveform Audio (.wav)</option> -->
 		  <option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
-		  <option value="ogg">Ogg Vorbis (.ogg)</option>
+		  <!-- <option value="ogg">Ogg Vorbis (.ogg)</option> -->
 		</select>
 		<div id="controls">
 			<button id="recordButton">Record</button>
 			<button id="stopButton" disabled>Stop</button>
 		</div>
 		<div id="formats"></div>
-		<pre>Log</pre>
+		
+		<pre></pre>
 		<pre id="log"></pre>
 
 		<pre>Recordings</pre>
 		<ol id="recordingsList"></ol>
 	</div>
 
+	<div class="form">
+		<form onsubmit="return false">
+			<label>Audio upload</label>
+			<input type="file" accept="audio/mp3" class="audio">
+			<button type="submit">Upload file</button>
+		</form>
+	</div>
+
 	<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
-	<script src="js/WebAudioRecorder.min.js"></script>
-	<script src="js/app.js"></script>
+	<script src="/js/WebAudioRecorder.min.js"></script>
+	<script src="/js/app.js"></script>
 
 	<h2>Record Audio</h2>
 	<button id="record" type="button" onclick="recordAudio()">Record your audio</button>
@@ -43,7 +52,9 @@
 	<h2>Upload Audio</h2>
 	<button type="button" onclick="uploadAudio()">Upload your audio</button>
 	<h2>Convert button</h2>
-	<footer> 
+
+</body>
+<footer> 
 	<h2>help and contact pages</h2>
 	<ul>
 		<li id="test">Placeholder</li>
@@ -52,6 +63,4 @@
 		<li>Placeholder</li>
 	</ul>
 	</footer>
-
-</body>
 </html>
