@@ -1,3 +1,17 @@
+html {
+    font-family: 'sans-serif';
+    background-color: white;
+    font-size: 100%;
+}
+
+body {
+    line-height: 1.5;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: 2em;
+}
+
 h1 {
     color: rgba(33, 33, 197, 0.648);
     text-align: center;
@@ -5,15 +19,13 @@ h1 {
 
 .heading {
     background-color: rgb(115, 115, 234);
+    width: 100%;
+    padding: 70px 0;
+    color: greenyellow;
 }
 
 h2 {
     color: blue;
-}
-
-html {
-    font-family: 'Open Sans', sans-serif;
-    background-color: aquamarine;
 }
 
 footer {
@@ -34,8 +46,11 @@ li {
 .emphasis {
     font-size: 20px;
     font-weight: bold;
+    font-family: 'sans-serif'
 }
 
-body {
-    text-align: center;
+
+
+p {
+    
 }

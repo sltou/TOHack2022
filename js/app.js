@@ -64,7 +64,7 @@ function startRecording() {
 		encodingTypeSelect.disabled = true;
 
 		recorder = new WebAudioRecorder(input, {
-		  workerDir: "js/", // must end with slash
+		  workerDir: "/js/", // must end with slash
 		  encoding: encodingType,
 		  numChannels:2, //2 is the default, mp3 encoding supports only 2
 		  onEncoderLoading: function(recorder, encoding) {
@@ -78,7 +78,7 @@ function startRecording() {
 		});
 
 		recorder.onComplete = function(recorder, blob) { 
-			// __log("Encoding complete");
+			 //__log("Encoding complete");
 			createDownloadLink(blob,recorder.encoding);
 			encodingTypeSelect.disabled = false;
 		}
@@ -129,6 +129,7 @@ function createDownloadLink(blob,encoding) {
 	var au = document.createElement('audio');
 	var li = document.createElement('li');
 	var link = document.createElement('a');
+	var br = document.createElement('br');
 
 	//add controls to the <audio> element
 	au.controls = true;
@@ -141,6 +142,7 @@ function createDownloadLink(blob,encoding) {
 
 	//add the new audio and a elements to the li element
 	li.appendChild(au);
+	li.appendChild(br);
 	li.appendChild(link);
 
 	//add the li element to the ordered list
@@ -181,6 +183,7 @@ const getValuesFromInputs = () =>{
 	var au = document.createElement('audio');
 	var li = document.createElement('li');
 	var link = document.createElement('a');
+	var br = document.createElement('br')
 
 	//add controls to the <audio> element
 	au.controls = true;
@@ -194,6 +197,7 @@ const getValuesFromInputs = () =>{
 	//add the new audio and a elements to the li element
 	li.appendChild(au);
 	li.appendChild(link);
+	li.appendChild(br);
 
 	//add the li element to the ordered list
 	recordingsList.appendChild(li);
