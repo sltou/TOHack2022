@@ -1,0 +1,27 @@
+h1 {
+    color: rgba(33, 33, 197, 0.648);
+    text-align: center;
+}
+
+h2 {
+    color: blue;
+}
+
+.background {
+   /* padding*/
+}
+
+footer {
+    text-align: center;
+    padding: 1px;
+    background-color: aquamarine;
+    color: black;
+}
+
+footer > h2 {
+    color: blue;
+}
+
+li {
+    display: inline;
+}

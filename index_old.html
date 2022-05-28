@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TOHack2022 project</title>
+        <link href="/css/styling.css" rel="stylesheet" type="text/css">
+        <script src="/scripts/audio-recorder/lib/WebAudioRecorder.js"></script>
+        <script src="/scripts/main.js"></script>
+        <script src="/scripts/index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div style="max-width: 28em;">
+            <p>Convert recorded audio to:</p>
+            <select id="encodingTypeSelect">
+              <option value="wav">Waveform Audio (.wav)</option>
+              <option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
+              <option value="ogg">Ogg Vorbis (.ogg)</option>
+            </select>
+            <div id="controls">
+                <button id="recordButton">Record</button>
+                <button id="stopButton" disabled>Stop</button>
+            </div>
+            <div id="formats"></div>
+            <pre>Log</pre>
+            <pre id="log"></pre>
+    
+            <pre>Recordings</pre>
+            <ol id="recordingsList"></ol>
+        </div>
+    
+        <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+        <script src="scripts/WebAudioRecorder.min.js"></script>
+        <script src="scripts/app.js"></script>
+
+
+
+        <h1>Record Audio</h1>
+        <button id="record" type="button" onclick="recordAudio()">Record your audio</button>
+        <button id="end_record" type="button" onclick="endRecordAudio()">Record your audio</button>
+        
+        <script src="/scripts/index.js"></script>
+     <button id="action" onclick="handleAction()">Start recording...</button>
+
+        <h1>Upload Audio</h1>
+        <button type="button" onclick="uploadAudio()">Upload your audio</button>
+        <h1>Convert button</h1>
+        <footer> 
+        <h1>help and contact pages</h1>
+        <ul>
+            <li id="test">Placeholder</li>
+            <li>Placeholder</li> <!--I will have to make this part inline rather than block-->
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+        </ul>
+        </footer>
+    </body>
+
+</html>
