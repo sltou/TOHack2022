@@ -1,5 +1,5 @@
 //webkitURL is deprecated but nevertheless
-URL = window.URL || window.webkitURL;
+//URL = window.URL || window.webkitURL;
 
 var gumStream; 						//stream from getUserMedia()
 var recorder; 						//WebAudioRecorder object
@@ -136,7 +136,7 @@ function createDownloadLink(blob,encoding) {
 
 	//link the a element to the blob
 	link.href = url;
-	link.download = 'audio.'+encoding;
+	link.download = "test."+encoding;
 	link.innerHTML = link.download;
 
 	//add the new audio and a elements to the li element
