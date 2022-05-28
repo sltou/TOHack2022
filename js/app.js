@@ -197,7 +197,6 @@ const getValuesFromInputs = () =>{
 	//add the new audio and a elements to the li element
 	li.appendChild(au);
 	li.appendChild(link);
-	li.appendChild(br);
 
 	//add the li element to the ordered list
 	recordingsList.appendChild(li);
