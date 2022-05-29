@@ -15,6 +15,8 @@ var encodingTypeSelect = document.getElementById("encodingTypeSelect");
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
 
+// 
+
 //add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
@@ -130,6 +132,7 @@ function createDownloadLink(blob,encoding) {
 	var li = document.createElement('li');
 	var link = document.createElement('a');
 	var br = document.createElement('br');
+	var translatedText;	
 
 	//add controls to the <audio> element
 	au.controls = true;
@@ -139,16 +142,83 @@ function createDownloadLink(blob,encoding) {
 	link.href = url;
 	link.download = 'recordedAudio.'+encoding;
 	link.innerHTML = link.download;
+	//link.click();
 
+	//upload link to the server
+	var xhr = new XMLHttpRequest();
+	xhr.onload = function (e, li) {
+		if (this.readyState === 4) {
+			console.log("Server returned: ", e.target.responseText);
+			translatedText = e.target.responseText;
+		}
+	};
+	var fd = new FormData();
+	fd.append('audio-file', blob);
+	xhr.open("POST", "/audioupload", false);
+	xhr.send(fd);
+	//console.log(text);
 	//add the new audio and a elements to the li element
 	li.appendChild(au);
 	li.appendChild(br);
 	li.appendChild(link);
+	li.appendChild(br);
+	console.log(translatedText);
+	var txt = document.createTextNode(translatedText);
 
+	li.appendChild(txt);
+	li.appendChild(br);
 	//add the li element to the ordered list
 	recordingsList.appendChild(li);
+
+	//this is passing a json to python, make it into separate funtion [TODO]
+	//var audioLink = recordingsList.childNodes[0].childNodes[2].href;
+
+	// converting audio from binary blob to mp3
+	/*var ffmpeg = require('ffmpeg');
+	try {
+		var process = new ffmpeg('testblob');
+		process.then(function (audio) {
+			audio.fnExtractSoundToMP3('testmp3.mp3', function (error, file) {
+				if (!error)
+					console.log('Audio file: ' + file);
+			});
+		}, function (err) {
+			console.log('Error: ' + err);
+		});
+	}
+	catch (e) {
+		console.log(e.code);
+		console.log(e.msg);
+    }*/
+	//sendAudioFile(au);
+	//console.log(audioLink);
+	/*
+	fetch("http://127.0.0.1:5000/receiver",
+		{
+			method: 'POST',
+			headers: {
+				'Content-type': 'application/json',
+				'Accept': 'application/json'
+			},
+			// Strigify the payload into JSON:
+			body: JSON.stringify(audioLink)
+		}).then(res => {
+			if (res.ok) {
+				return res.json()
+			} else {
+				alert("something is wrong with json")
+			}
+		}).then(jsonResponse => {
+
+			// Log the response data in the console
+			console.log(jsonResponse)
+		}
+		).catch((err) => console.error(err));*/
 }
 
+/*function sendAudio2Python(blob, enconding) {
+	recordingsList[-1].
+}*/
 
 
 //helper function
