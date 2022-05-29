@@ -65,3 +65,11 @@ a:visited {
     color: lightgray
 }
 
+.select {
+    border-radius: 2px;
+}
+
+.button {
+    border-radius: 2px;
+}
+
