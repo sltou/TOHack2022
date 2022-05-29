@@ -47,7 +47,7 @@ footer > h2 {
 }
 
 li {
-    display: inline;
+    display: block;
 }
 
 .emphasis {
