@@ -160,7 +160,7 @@ function createDownloadLink(blob,encoding) {
 	//console.log(text);
 	//add the new audio and a elements to the li element
 	li.appendChild(au);
-	li.appendChild(br;
+	li.appendChild(br);
 	li.appendChild(link);
 	li.appendChild(br);
 	console.log(translatedText);
