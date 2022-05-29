@@ -56,3 +56,11 @@ li {
     font-family: 'sans-serif'
 }
 
+a:link {
+    color: white
+}
+
+a:visited {
+    color: lightgray
+}
+
