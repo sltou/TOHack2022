@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-    color: rgba(53, 41, 61, 0.648);
+    color: rgba(50, 40, 56, 0.648);
     text-align: center;
 }
 
@@ -35,7 +35,7 @@ h2 {
 footer {
     text-align: center;
     padding: 1px;
-    background-color: rgba(53, 41, 61, 0.648);
+    background-color: rgba(50, 40, 56, 0.648);
     color: white;
     width: 100%;
     left: 0;
@@ -48,6 +48,7 @@ footer > h2 {
 
 li {
     display: block;
+    float: none
 }
 
 .emphasis {
