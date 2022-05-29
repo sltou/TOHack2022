@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -6,23 +6,24 @@
 	<title>TOHack2022 project</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" type="text/css" href="/css/styling.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styling.css') }}">
 </head>
 <body>
-    <h1 class="heading">Text to Emoji Conversion</h1>
-	<div style="max-width: 90em;"> <!--originally 28em max-width-->
+	<h1 class="heading">Text to Emoji Conversion</h1>
+	<div style="max-width: 90em;">
+		<!--originally 28em max-width-->
 		<p class="emphasis">Convert recorded audio to:</p>
 		<select id="encodingTypeSelect">
-		  <!-- <option value="wav">Waveform Audio (.wav)</option> -->
-		  <option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
-		  <!-- <option value="ogg">Ogg Vorbis (.ogg)</option> -->
+			<!-- <option value="wav">Waveform Audio (.wav)</option> -->
+			<option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
+			<!-- <option value="ogg">Ogg Vorbis (.ogg)</option> -->
 		</select>
 		<div id="controls">
 			<button id="recordButton">Record</button>
 			<button id="stopButton" disabled>Stop</button>
 		</div>
 		<div id="formats"></div>
-		
+
 		<pre></pre>
 		<pre id="log"></pre>
 
@@ -41,28 +42,28 @@
 	</div>
 
 	<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
-	<script src="/js/WebAudioRecorder.min.js"></script>
-	<script src="/js/app.js"></script>
+	<script src="{{ url_for('static', filename='js/WebAudioRecorder.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 	<h2>Record Audio</h2>
-	<button id="record" type="button" onclick="recordAudio()">Record your audio</button>
-	<button id="end_record" type="button" onclick="endRecordAudio()">Record your audio</button>
-	
-	<script src="/scripts/index.js"></script>
- <button id="action" onclick="handleAction()">Start recording...</button>
+	<button id="record" type="button" onclick="startRecording()">Record your audio</button>
+	<button id="end_record" type="button" onclick="stopRecording()">Record your audio</button>
 
-	<h2>Upload Audio</h2>
-	<button type="button" onclick="uploadAudio()">Upload your audio</button>
-	<h2>Convert button</h2>
+	<!-- <script src="{{ url_for('static', filename='js/index.js') }}"></script> -->
+	 <button id="action" onclick="handleAction()">Start recording...</button>
 
-</body>
-<footer> 
-	<h2>help and contact pages</h2>
-	<ul>
-		<li id="test">Placeholder</li>
-		<li>Placeholder</li> <!--I will have to make this part inline rather than block-->
-		<li>Placeholder</li>
-		<li>Placeholder</li>
+		<h2>Upload Audio</h2>
+		<button type="button" onclick="uploadAudio()">Upload your audio</button>
+		<h2>Convert button</h2>
+
+	</body>
+	<footer>
+		<h2>help and contact pages</h2>
+		<ul>
+			<li id="test">Placeholder</li>
+			<li>Placeholder</li> <!--I will have to make this part inline rather than block-->
+	<li>Placeholder</li>
+	<li>Placeholder</li>
 	</ul>
 	</footer>
 </html>
