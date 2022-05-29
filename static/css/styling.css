@@ -33,6 +33,10 @@ footer {
     padding: 1px;
     background-color: rgb(115, 115, 234);
     color: black;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
 
 footer > h2 {
