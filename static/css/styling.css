@@ -73,3 +73,12 @@ a:visited {
     border-radius: 10%;
 }
 
+#recordings {
+    font-family: 'sans-serif';
+    color: white;
+}
+
+#recordingsList {
+    font-family: 'sans-serif';
+    color: white;
+}
