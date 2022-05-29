@@ -1,6 +1,6 @@
 html {
     font-family: 'sans-serif';
-    background-color: white;
+    background-color: rgb(68, 210, 189);
     font-size: 100%;
 }
 
@@ -33,6 +33,9 @@ footer {
     padding: 1px;
     background-color: rgb(115, 115, 234);
     color: black;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
 
 footer > h2 {
