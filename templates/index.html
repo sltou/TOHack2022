@@ -7,7 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styling.css') }}">
-	<img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo.png">
+	<div class="header-image">
+		<img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo.png" width="device-width">
+	</div>
 </head>
 <body>
 	<h1 class="heading">Text to Emoji Conversion</h1>
@@ -34,40 +36,15 @@
 		<ol id="recordingsList"></ol>
 	</div>
 
-	<div class="form">
-		<form onsubmit="return false">
-			<label>Audio upload</label>
-			<input type="file" accept="audio/mp3" class="audio">
-			<button type="submit">Upload file</button>
-		</form>
-	</div>
-
 	<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
 
 	<script src="{{ url_for('static', filename='js/WebAudioRecorder.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
-	<!--
-	<h2>Record Audio</h2>
-	<button id="record" type="button" onclick="startRecording()">Record your audio</button>
-	<button id="end_record" type="button" onclick="stopRecording()">Record your audio</button>
-
-	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
-	<button id="action" onclick="handleAction()">Start recording...</button>
-
-	<h2>Upload Audio</h2>
-	<button type="button" onclick="uploadAudio()">Upload your audio</button>
-	<h2>Convert button</h2>
-		 -->
-
 </body>
 	<footer>
-		<h2>help and contact pages</h2>
-		<ul>
-			<li id="test">Placeholder</li>
-			<li>Placeholder</li> <!--I will have to make this part inline rather than block-->
-	<li>Placeholder</li>
-	<li>Placeholder</li>
-	</ul>
+		<h2>Contact</h2>
+		<a href="https://github.com/sltou/TOHack2022">Github</a> |
+		<a href="https://devpost.com/software/emoxt">Devpost</a>
 	</footer>
 </html>

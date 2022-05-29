@@ -1,6 +1,6 @@
 html {
     font-family: 'sans-serif';
-    background-color: rgb(68, 210, 189);
+    background-color: rgb(162, 129, 141);
     font-size: 100%;
 }
 
@@ -13,25 +13,29 @@ body {
 }
 
 h1 {
-    color: rgba(33, 33, 197, 0.648);
+    color: rgba(68, 49, 81, 0.648);
     text-align: center;
 }
 
 .heading {
-    background-color: rgb(115, 115, 234);
     width: 100%;
     padding: 70px 0;
-    color: greenyellow;
+    color: white;
+}
+
+.header-image img{
+    width:100%;
+    height:auto;
 }
 
 h2 {
-    color: blue;
+    color: white;
 }
 
 footer {
     text-align: center;
     padding: 1px;
-    background-color: rgb(115, 115, 234);
+    background-color: rgba(68, 49, 81, 0.648);
     color: black;
     width: 100%;
     left: 0;
