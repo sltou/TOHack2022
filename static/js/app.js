@@ -129,7 +129,9 @@ function createDownloadLink(blob,encoding) {
 	
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
-	var li = document.createElement('li');
+	var li_au = document.createElement('li');
+	var li_link = document.createElement('li');
+	var li_text = document.createElement('li');
 	var link = document.createElement('a');
 	var newline = document.createTextNode("\n\n");
 	var translatedText;	
@@ -158,17 +160,20 @@ function createDownloadLink(blob,encoding) {
 	xhr.send(fd);
 	//console.log(text);
 	//add the new audio and a elements to the li element
-	li.appendChild(au);
-	li.appendChild(newline);
-	li.appendChild(link);
-	li.appendChild(newline);
+	li_au.appendChild(au);
+	//li.appendChild(newline);
+	li_link.appendChild(link);
+	//li.appendChild(newline);
 	console.log(translatedText);
 	var txt = document.createTextNode("\n\n" +translatedText);
 
-	li.appendChild(txt);
-	li.appendChild(newline);
+	li_text.appendChild(txt);
+	//li.appendChild(newline);
 	//add the li element to the ordered list
-	recordingsList.appendChild(li);
+	recordingsList.appendChild(li_au);
+	recordingsList.appendChild(li_link);
+	recordingsList.appendChild(li_text);
+
 
 	//this is passing a json to python, make it into separate funtion [TODO]
 	//var audioLink = recordingsList.childNodes[0].childNodes[2].href;
