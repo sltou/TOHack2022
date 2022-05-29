@@ -64,7 +64,7 @@ function startRecording() {
 		encodingTypeSelect.disabled = true;
 
 		recorder = new WebAudioRecorder(input, {
-		  workerDir: "https://cdn.jsdelivr.net/gh/sltou/TOHack2022@tree/main/js/", // must end with slash
+		  workerDir: "/js/", // must end with slash
 		  encoding: encodingType,
 		  numChannels:2, //2 is the default, mp3 encoding supports only 2
 		  onEncoderLoading: function(recorder, encoding) {
