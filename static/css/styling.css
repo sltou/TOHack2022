@@ -66,10 +66,10 @@ a:visited {
 }
 
 .select {
-    border-radius: 8px;
+    border-radius: 10%;
 }
 
 .button {
-    border-radius: 8px;
+    border-radius: 10%;
 }
 
