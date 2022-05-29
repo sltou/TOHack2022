@@ -1,4 +1,8 @@
 # TOHack2022
+Quick Setup:
+1. run the line "pip install numpy pandas tensorflow emoji"
+2. Download the file from https://drive.google.com/file/d/16k74nHv9bvkduTOy8KVJjOtTCwJeKduO/view?usp=sharing, and save it at /content folder.
+
 Instructions to open the website through flask
 1. Open Anaconda Prompt
 2. "set FLASK_APP=tryFlask" ("export FLASK_APP=tryFlask" for Mac users)
