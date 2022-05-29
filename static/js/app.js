@@ -131,7 +131,8 @@ function createDownloadLink(blob,encoding) {
 	var au = document.createElement('audio');
 	var li = document.createElement('li');
 	var link = document.createElement('a');
-	var p = document.createElement('p');
+	var br = document.createElement('span');
+	br.innerHTML="<br/>"
 	var translatedText;	
 
 	//add controls to the <audio> element
@@ -159,14 +160,14 @@ function createDownloadLink(blob,encoding) {
 	//console.log(text);
 	//add the new audio and a elements to the li element
 	li.appendChild(au);
-	li.appendChild(p);
+	li.appendChild(br;
 	li.appendChild(link);
-	li.appendChild(p);
+	li.appendChild(br);
 	console.log(translatedText);
 	var txt = document.createTextNode(translatedText);
 
 	li.appendChild(txt);
-	li.appendChild(p);
+	li.appendChild(br);
 	//add the li element to the ordered list
 	recordingsList.appendChild(li);
 
