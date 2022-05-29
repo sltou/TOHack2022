@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-    color: rgba(68, 49, 81, 0.648);
+    color: rgba(53, 41, 61, 0.648);
     text-align: center;
 }
 
@@ -35,15 +35,15 @@ h2 {
 footer {
     text-align: center;
     padding: 1px;
-    background-color: rgba(68, 49, 81, 0.648);
-    color: black;
+    background-color: rgba(53, 41, 61, 0.648);
+    color: white;
     width: 100%;
     left: 0;
     bottom: 0;
 }
 
 footer > h2 {
-    color: greenyellow;
+    color: white;
 }
 
 li {
