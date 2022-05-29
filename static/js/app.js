@@ -164,7 +164,7 @@ function createDownloadLink(blob,encoding) {
 	li.appendChild(link);
 	li.appendChild(br);
 	console.log(translatedText);
-	var txt = document.createTextNode(translatedText);
+	var txt = document.createTextNode("/n" +translatedText);
 
 	li.appendChild(txt);
 	li.appendChild(br);
