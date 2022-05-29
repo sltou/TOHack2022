@@ -166,7 +166,7 @@ function createDownloadLink(blob,encoding) {
 	var txt = document.createTextNode("\n\n" +translatedText);
 
 	li.appendChild(txt);
-	li.appendChild(br);
+	li.appendChild(newline);
 	//add the li element to the ordered list
 	recordingsList.appendChild(li);
 
