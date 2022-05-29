@@ -132,7 +132,6 @@ function createDownloadLink(blob,encoding) {
 	var li = document.createElement('li');
 	var link = document.createElement('a');
 	var newline = document.createTextNode("\n\n");
-	br.innerHTML="<br/>"
 	var translatedText;	
 
 	//add controls to the <audio> element
